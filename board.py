@@ -22,3 +22,5 @@ def placeStone(xPos, yPos, player):
         return "Invalid player"
     if boardPositions[yPos][xPos] == 0:
         boardPositions[yPos][xPos] = player
+    else:
+        return "Position occupied"
