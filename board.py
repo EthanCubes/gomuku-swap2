@@ -61,8 +61,8 @@ while running:
 
     if pygame.mouse.get_pressed(3)[0]:
         mousePos = pygame.mouse.get_pos()
-        gridX = round(mousePos[0]/res)
-        gridY = round(mousePos[1]/res)
+        gridX = round(mousePos[0]/res) - 1
+        gridY = round(mousePos[1]/res) - 1
         if gridX > 14:
             gridX = 14
         if gridY > 14:
