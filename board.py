@@ -22,9 +22,13 @@ def placeStone(xPos, yPos, player):
     global boardPositions
     boardPositions[yPos][xPos] = player
 
+res = 45 # Change this according to screen resolution
+
 pygame.init()
-screen = pygame.display.set_mode((960, 960))
+screen = pygame.display.set_mode((res*16, res*16))
 pygame.display.set_caption("Gomuku Swap2")
+img = pygame.image.load("gomuku-swap2icon.bmp")
+pygame.display.set_icon(img)
 clock = pygame.time.Clock()
 running = True
 
@@ -37,9 +41,9 @@ while running:
     screen.fill("peru")
 
     for i in range(15):
-        pygame.draw.line(screen, (0, 0, 0), (60, 60+i*60), (900, 60+i*60), 5)
+        pygame.draw.line(screen, (0, 0, 0), (res, res+i*res), (res*15, res+i*res), round(res/12))
     for i in range(15):
-        pygame.draw.line(screen, (0, 0, 0), (60+i*60, 60), (60+i*60, 900), 5)
+        pygame.draw.line(screen, (0, 0, 0), (res+i*res, res), (res+i*res, res*15), round(res/12))
 
     pygame.display.flip()
 
