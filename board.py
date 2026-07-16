@@ -34,7 +34,7 @@ running = True
 
 currentPlayer = 1
 while running:
-    currentPlayer *= 1
+    currentPlayer *= -1
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -46,25 +46,28 @@ while running:
     for i in range(15):
         pygame.draw.line(screen, (0, 0, 0), (res+i*res, res), (res+i*res, res*15), round(res/12))
 
-    pygame.display.flip()
-
     xPos = res
     yPos = res
-    for x in range(15):
-        for y in range(15):
-            if currentPlayer == 1:
+    for y in range(15):
+        yPos = res + res*y
+        for x in range(15):
+            xPos = res + res*x
+            if boardPositions[y][x] == 1:
                 color = (255, 255, 255)
             else:
                 color = (0, 0, 0)
-            pygame.draw.circle(screen, color, (xPos, yPos), res/2)
-            xPos += res
-        yPos += res
+            if boardPositions[y][x] != 0:
+                pygame.draw.circle(screen, color, (xPos, yPos), 25)
 
     if pygame.mouse.get_pressed(3)[0]:
         mousePos = pygame.mouse.get_pos()
         gridX = round(mousePos[0]/res)
         gridY = round(mousePos[1]/res)
+        if gridX > 14:
+            gridX = 14
+        if gridY > 14:
+            gridY = 14
         if boardPositions[gridY][gridX] == 0:
             placeStone(gridX, gridY, currentPlayer)
-
+    pygame.display.flip()
     clock.tick(60)
