@@ -30,9 +30,8 @@ while running:
             yPos = int(input("Enter yPos"))
         except:
             print("Input invalid")
-            break
-        if xPos == "exit" or yPos == "exit":
             running = False
+            break
         if xPos < 0 or xPos > 14:
             print("Invalid position")
             break
