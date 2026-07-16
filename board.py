@@ -43,4 +43,7 @@ while running:
 
     pygame.display.flip()
 
+    if pygame.mouse.get_pressed(3)[0]:
+        print(pygame.mouse.get_pos())
+
     clock.tick(60)
