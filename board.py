@@ -33,7 +33,7 @@ pygame.display.set_icon(img)
 clock = pygame.time.Clock()
 running = True
 
-currentPlayer = 1
+currentPlayer = -1
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
