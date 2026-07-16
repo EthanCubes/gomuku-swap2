@@ -19,8 +19,9 @@ boardPositions = [
 ]
 
 def placeStone(xPos, yPos, player):
-    global boardPositions
+    global boardPositions, currentPlayer
     boardPositions[yPos][xPos] = player
+    currentPlayer *= -1
 
 res = 45 # Change this according to screen resolution
 
@@ -34,7 +35,6 @@ running = True
 
 currentPlayer = 1
 while running:
-    currentPlayer *= -1
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -57,7 +57,7 @@ while running:
             else:
                 color = (0, 0, 0)
             if boardPositions[y][x] != 0:
-                pygame.draw.circle(screen, color, (xPos, yPos), 25)
+                pygame.draw.circle(screen, color, (xPos, yPos), 20)
 
     if pygame.mouse.get_pressed(3)[0]:
         mousePos = pygame.mouse.get_pos()
