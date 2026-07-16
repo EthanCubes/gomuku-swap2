@@ -19,7 +19,6 @@ boardPositions = [
 def placeStone(xPos, yPos, player):
     global boardPositions
     boardPositions[yPos][xPos] = player
-    return boardPositions
 
 running = True
 currentPlayer = -1
@@ -42,5 +41,8 @@ while running:
              break
         inputValid = True
 
-    print(placeStone(xPos, yPos, currentPlayer))
+    placeStone(xPos, yPos, currentPlayer)
+    for i in range(15):
+        print(boardPositions[i])
+
     currentPlayer *= -1
