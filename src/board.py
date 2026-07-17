@@ -44,9 +44,6 @@ def placeStone(xPos, yPos, player):
 
 def gameloop():
     global running, boardPositions, screen, clock
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
     
     screen.fill("peru")
 
@@ -88,7 +85,6 @@ def gameloop():
     if calcWin() != 0:
         running = False
         print(calcWin())
-    pygame.display.flip()
     clock.tick(60)
 
 res = 45 # Change this according to screen resolution
@@ -103,4 +99,12 @@ running = True
 
 currentPlayer = -1
 while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
     gameloop()
+    try:
+        pygame.display.flip()
+    except:
+        break
+pygame.quit()
