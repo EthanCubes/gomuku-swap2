@@ -54,6 +54,8 @@ def gameloop():
         pygame.draw.circle(screen, (0, 0, 0), (res*16-res/2, res/2), 5)
     else:
         pygame.draw.circle(screen, (255, 255, 255), (res*16-res/2, res/2), 5)
+    
+    pygame.draw.circle(screen, (0, 0, 0), (res*8, res*8), res/5)
 
     for i in range(15):
         pygame.draw.line(screen, (0, 0, 0), (res, res+i*res), (res*15, res+i*res), round(res/12))
