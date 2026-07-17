@@ -1,6 +1,24 @@
 import pygame
 from win import *
 
+defaultBoardPositions = [
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+]
+
 boardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -24,23 +42,18 @@ def placeStone(xPos, yPos, player):
     boardPositions[yPos][xPos] = player
     currentPlayer *= -1
 
-res = 45 # Change this according to screen resolution
-
-pygame.init()
-screen = pygame.display.set_mode((res*16, res*16))
-pygame.display.set_caption("Gomuku Swap2")
-img = pygame.image.load("assets/gomuku-swap2icon.bmp")
-pygame.display.set_icon(img)
-clock = pygame.time.Clock()
-running = True
-
-currentPlayer = -1
-while running:
+def gameloop():
+    global running, boardPositions, screen, clock
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
     
     screen.fill("peru")
+
+    if currentPlayer == -1:
+        pygame.draw.circle(screen, (0, 0, 0), (res*16-res/2, res/2), 5)
+    else:
+        pygame.draw.circle(screen, (255, 255, 255), (res*16-res/2, res/2), 5)
 
     for i in range(15):
         pygame.draw.line(screen, (0, 0, 0), (res, res+i*res), (res*15, res+i*res), round(res/12))
@@ -75,3 +88,17 @@ while running:
         print(calcWin())
     pygame.display.flip()
     clock.tick(60)
+
+res = 45 # Change this according to screen resolution
+
+pygame.init()
+screen = pygame.display.set_mode((res*16, res*16))
+pygame.display.set_caption("Gomuku Swap2")
+img = pygame.image.load("assets/gomuku-swap2icon.bmp")
+pygame.display.set_icon(img)
+clock = pygame.time.Clock()
+running = True
+
+currentPlayer = -1
+while running:
+    gameloop()
