@@ -7,7 +7,6 @@ def scanPosition(basePos, pos1, pos2, pos3, pos4):
     pos2Status = boardPositions[pos2[1]][pos2[0]]
     pos3Status = boardPositions[pos3[1]][pos3[0]]
     pos4Status = boardPositions[pos4[1]][pos4[0]]
-    print(pos1Status, pos2Status, pos3Status, pos4Status)
     if basePosStatus == pos1Status:
         if basePosStatus == pos2Status:
             if basePosStatus == pos3Status:
