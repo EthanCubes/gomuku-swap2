@@ -1,6 +1,6 @@
 # Gomuku (Swap2)
 A east asian board game simular to tic-tac-toe, except it's played on a 15x15 board and you need to get 5 in a row to win.
-![Image of a Go board](screenshots/Screenshot_20260716_125204.png)
+![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
 
 [Play it here]()
 ## Quickstart
