@@ -1,5 +1,5 @@
 import pygame
-from win import calcWin
+from win import *
 
 boardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
