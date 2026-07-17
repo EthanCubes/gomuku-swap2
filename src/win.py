@@ -96,5 +96,4 @@ def calcWin():
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
                 return -1
-            
-            return 0
+    return 0   
