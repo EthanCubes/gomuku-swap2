@@ -10,26 +10,31 @@ quit = pygame.image.load("assets/quit.bmp")
 def mainMenu():
     g.screen.fill("peru")
 
-    g.screen.blit(title, (g.res*8-150, g.res*2))
+    g.screen.blit(title, (210, 90))
 
     # "Singleplayer" button
-    g.screen.blit(singleplayer, (g.res*8-150, g.res*6))
-    buttonClicked = g.buttonClicked((g.res*8-150, g.res*6-40), (g.res*8+150, g.res*6+40))
+    g.screen.blit(singleplayer, (210, 270))
+    buttonClicked = g.buttonClicked((210, 270), (300, 100))
     if buttonClicked:
         g.mode = 2
+        print(2)
 
     # "Multiplayer" button
-    g.screen.blit(multiplayer, (g.res*8-150, g.res*8))
-    buttonClicked = g.buttonClicked((g.res*8-150, g.res*8-40), (g.res*8+150, g.res*8+40))
+    g.screen.blit(multiplayer, (210, 370))
+    buttonClicked = g.buttonClicked((210, 370), (300, 100))
     if buttonClicked:
         g.mode = 1
+        print(1)
     
     # Settings button
-    g.screen.blit(settings, (g.res*5-15, g. res*10))
-    buttonClicked = g.buttonClicked((g.res*8-150, g.res*9), (g.res*8+150, g.res*9))
+    g.screen.blit(settings, (210, 470))
+    buttonClicked = g.buttonClicked((210, 470), (140, 40))
     if buttonClicked:
         g.mode = 3
+        print(3)
 
     # Quit game button
-    g.screen.blit(quit, (g.res*10-80, g. res*10))
-    buttonClicked = g.buttonClicked((g.res*8-150, g.res*9-40), (g.res*8+150, g.res*9+40))
+    g.screen.blit(quit, (370, 470))
+    buttonClicked = g.buttonClicked((370, 470), (140, 40))
+    if buttonClicked:
+        g.running = False

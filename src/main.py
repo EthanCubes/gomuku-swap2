@@ -4,7 +4,7 @@ import globals as g
 from mainMenu import mainMenu
 
 pygame.init()
-g.screen = pygame.display.set_mode((g.res*16, g.res*16))
+g.screen = pygame.display.set_mode((720, 720))
 pygame.display.set_caption("Gomuku Swap2")
 g.img = pygame.image.load("assets/gomuku-swap2icon.bmp")
 pygame.display.set_icon(g.img)

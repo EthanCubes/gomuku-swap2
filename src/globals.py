@@ -1,7 +1,5 @@
 import pygame
 
-res = 45
-
 '''
 0: Main menu
 1: Play w/ friends
