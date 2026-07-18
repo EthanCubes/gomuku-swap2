@@ -48,23 +48,23 @@ def gameloop():
     screen.fill("peru")
 
     if currentPlayer == -1:
-        pygame.draw.circle(screen, (0, 0, 0), (res*16-res/2, res/2), 5)
+        pygame.draw.circle(screen, (0, 0, 0), (697, 23), 5)
     else:
-        pygame.draw.circle(screen, (255, 255, 255), (res*16-res/2, res/2), 5)
+        pygame.draw.circle(screen, (255, 255, 255), (697, 23), 5)
     
-    pygame.draw.circle(screen, (0, 0, 0), (res*8, res*8), res/5)
+    pygame.draw.circle(screen, (0, 0, 0), (360, 360), 10)
 
     for i in range(15):
-        pygame.draw.line(screen, (0, 0, 0), (res, res+i*res), (res*15, res+i*res), round(res/12))
+        pygame.draw.line(screen, (0, 0, 0), (45, 45+i*45), (675, 45+i*45), round(45/12))
     for i in range(15):
-        pygame.draw.line(screen, (0, 0, 0), (res+i*res, res), (res+i*res, res*15), round(res/12))
+        pygame.draw.line(screen, (0, 0, 0), (45+i*45, 45), (45+i*45, 675), round(45/12))
 
-    xPos = res
-    yPos = res
+    xPos = 45
+    yPos = 45
     for y in range(15):
-        yPos = res + res*y
+        yPos = 45 + 45*y
         for x in range(15):
-            xPos = res + res*x
+            xPos = 45 + 45*x
             if boardPositions[y][x] == 1:
                 color = (255, 255, 255)
             else:
@@ -74,8 +74,8 @@ def gameloop():
 
     if pygame.mouse.get_pressed(3)[0]:
         mousePos = pygame.mouse.get_pos()
-        gridX = round(mousePos[0]/res) - 1
-        gridY = round(mousePos[1]/res) - 1
+        gridX = round(mousePos[0]/45) - 1
+        gridY = round(mousePos[1]/45) - 1
         if gridX > 14:
             gridX = 14
         if gridY > 14:
@@ -87,10 +87,8 @@ def gameloop():
         print(calcWin())
     clock.tick(60)
 
-res = 45 # Change this according to screen resolution
-
 pygame.init()
-screen = pygame.display.set_mode((res*16, res*16))
+screen = pygame.display.set_mode((720, 720))
 pygame.display.set_caption("Gomuku Swap2")
 img = pygame.image.load("assets/gomuku-swap2icon.bmp")
 pygame.display.set_icon(img)
