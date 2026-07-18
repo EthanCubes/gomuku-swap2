@@ -1,4 +1,27 @@
+import pygame
+
+res = 45
+
+'''
+0: Main menu
+1: Play w/ friends
+2: Play w/ bot
+3: Settings
+'''
+mode = None
+
 screen = None
 img = None
 clock = None
 running = None
+
+def buttonClicked(start, endRel):
+    end = [0, 0]
+    end[0] = start[0] + endRel[0]
+    end[1] = start[1] + endRel[1]
+    mousePos = pygame.mouse.get_pos()
+    if pygame.mouse.get_pressed(3)[0] == True:
+        if mousePos[0] > start[0] and mousePos[0] < end[0] and mousePos[1] > start[1] and mousePos[1] < end[1]:
+            return True
+        else:
+            return False
