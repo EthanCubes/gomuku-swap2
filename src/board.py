@@ -7,7 +7,7 @@ def placeStone(xPos, yPos, player):
     g.boardPositions[yPos][xPos] = player
     g.currentPlayer *= -1
 
-def gameloop():
+def render():
     g.screen.fill("peru")
     if g.currentPlayer == -1:
         pygame.draw.circle(g.screen, (0, 0, 0), (697, 23), 5)
@@ -34,6 +34,8 @@ def gameloop():
             if g.boardPositions[y][x] != 0:
                 pygame.draw.circle(g.screen, color, (xPos, yPos), 20)
 
+def gameloop():
+    render()
     if pygame.mouse.get_pressed(3)[0]:
         mousePos = pygame.mouse.get_pos()
         gridX = round(mousePos[0]/45) - 1
@@ -44,9 +46,12 @@ def gameloop():
             gridY = 14
         if g.boardPositions[gridY][gridX] == 0:
             placeStone(gridX, gridY, g.currentPlayer)
+
     if calcWin() != 0:
+        render()
         print(calcWin())
         sleep(1)
         g.mode = 0
         g.resetBoard()
+        print(g.defaultBoardPositions)
     g.clock.tick(60)

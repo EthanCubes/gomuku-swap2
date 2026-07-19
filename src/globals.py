@@ -64,4 +64,4 @@ def buttonClicked(start, endRel):
 
 def resetBoard():
     global boardPositions, defaultBoardPositions
-    boardPositions = defaultBoardPositions
+    boardPositions = [row[:] for row in defaultBoardPositions]
