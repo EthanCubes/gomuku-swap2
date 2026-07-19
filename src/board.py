@@ -1,6 +1,6 @@
 import pygame
-import offlineMultiplayer as m
 import globals as g
+import random
 
 def placeStone(xPos, yPos, player):
     g.boardPositions[yPos][xPos] = player
@@ -44,3 +44,28 @@ def render():
                 color = (0, 0, 0)
             if g.boardPositions[y][x] != 0:
                 pygame.draw.circle(g.screen, color, (xPos, yPos), 20)
+
+def generateStartPos():
+    stone1 = [None, None]
+    stone1[0] = random.randint(5, 9)
+    stone1[1] = random.randint(5, 9)
+
+    stone2 = [None, None]
+    positionValid = False
+    while not positionValid:
+        stone2[0] = random.randint(5, 9)
+        stone2[1] = random.randint(5, 9)
+        if stone2 != stone1:
+            positionValid = True
+    
+    stone3 = [None, None]
+    positionValid = False
+    while not positionValid:
+        stone3[0] = random.randint(5, 9)
+        stone3[1] = random.randint(5, 9)
+        if stone3 != stone1 and stone3 != stone2:
+            positionValid = True
+
+    g.boardPositions[stone1[1]][stone1[0]] = -1
+    g.boardPositions[stone2[1]][stone2[0]] = 1
+    g.boardPositions[stone3[1]][stone3[0]] = -1
