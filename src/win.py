@@ -1,4 +1,7 @@
+import pygame
+from time import sleep
 import globals as g
+import board as b
 
 def scanPosition(basePos, pos1, pos2, pos3, pos4):
     try:
@@ -18,7 +21,7 @@ def scanPosition(basePos, pos1, pos2, pos3, pos4):
         return 0
     return 0
 
-def calcWin():
+def generateScan():
     for y in range(15):
         for x in range(15):
             currentPosition = (x, y)
@@ -114,4 +117,14 @@ def calcWin():
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
                 return -1
-    return 0   
+    return 0
+
+def calcWin():
+    if generateScan() != 0:
+        b.render()
+        pygame.draw.line(g.screen, (255, 0, 0), (g.winLine[0][0]*45+45, g.winLine[0][1]*45+45), (g.winLine[1][0]*45+45, g.winLine[1][1]*45+45), 5)
+        pygame.display.flip()
+        print(generateScan())
+        sleep(1)
+        g.mode = 0
+        g.resetBoard()
