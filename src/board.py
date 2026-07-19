@@ -53,5 +53,4 @@ def gameloop():
         sleep(1)
         g.mode = 0
         g.resetBoard()
-        print(g.defaultBoardPositions)
     g.clock.tick(60)
