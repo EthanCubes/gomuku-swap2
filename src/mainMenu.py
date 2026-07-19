@@ -18,7 +18,6 @@ def mainMenu():
     buttonClicked = g.buttonClicked((210, 270), (300, 100))
     if buttonClicked:
         g.mode = 2
-        print(2)
 
     # "Multiplayer" button
     g.screen.blit(multiplayer, (210, 370))
@@ -27,14 +26,12 @@ def mainMenu():
         sleep(0.5)
         g.currentPlayer = -1
         g.mode = 1
-        print(1)
     
     # Settings button
     g.screen.blit(settings, (210, 470))
     buttonClicked = g.buttonClicked((210, 470), (140, 40))
     if buttonClicked:
         g.mode = 3
-        print(3)
 
     # Quit game button
     g.screen.blit(quit, (370, 470))
