@@ -1,6 +1,6 @@
 import pygame
 import globals as g
-import board as b
+import offlineMultiplayer as m
 
 from mainMenu import mainMenu
 
@@ -21,7 +21,7 @@ while g.running:
     if g.mode == 0:
         mainMenu()
     elif g.mode == 1: # Multiplayer
-        b.gameloop()
+        m.gameloop()
     elif g.mode == 2: # Singleplayer
         pass
     elif g.mode == 3:
