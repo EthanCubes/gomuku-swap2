@@ -48,4 +48,5 @@ def gameloop():
         print(calcWin())
         sleep(1)
         g.mode = 0
+        g.resetBoard()
     g.clock.tick(60)

@@ -61,3 +61,7 @@ def buttonClicked(start, endRel):
             return True
         else:
             return False
+
+def resetBoard():
+    global boardPositions, defaultBoardPositions
+    boardPositions = defaultBoardPositions
