@@ -1,12 +1,13 @@
+import globals as g
+
 def scanPosition(basePos, pos1, pos2, pos3, pos4):
-    from board import boardPositions
-    basePosStatus = boardPositions[basePos[1]][basePos[0]]
+    basePosStatus = g.boardPositions[basePos[1]][basePos[0]]
     if basePosStatus == 0:
         return 0
-    pos1Status = boardPositions[pos1[1]][pos1[0]]
-    pos2Status = boardPositions[pos2[1]][pos2[0]]
-    pos3Status = boardPositions[pos3[1]][pos3[0]]
-    pos4Status = boardPositions[pos4[1]][pos4[0]]
+    pos1Status = g.boardPositions[pos1[1]][pos1[0]]
+    pos2Status = g.boardPositions[pos2[1]][pos2[0]]
+    pos3Status = g.boardPositions[pos3[1]][pos3[0]]
+    pos4Status = g.boardPositions[pos4[1]][pos4[0]]
     if basePosStatus == pos1Status:
         if basePosStatus == pos2Status:
             if basePosStatus == pos3Status:
@@ -15,7 +16,6 @@ def scanPosition(basePos, pos1, pos2, pos3, pos4):
     return 0
 
 def calcWin():
-    from board import boardPositions
     for y in range(4, 11):
         for x in range(4, 11):
             currentPosition = (x, y)
