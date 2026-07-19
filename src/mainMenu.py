@@ -1,5 +1,6 @@
 import pygame
 import globals as g
+from time import sleep
 
 title = pygame.image.load("assets/title.bmp")
 singleplayer = pygame.image.load("assets/playWithBot.bmp")
@@ -23,6 +24,8 @@ def mainMenu():
     g.screen.blit(multiplayer, (210, 370))
     buttonClicked = g.buttonClicked((210, 370), (300, 100))
     if buttonClicked:
+        sleep(0.5)
+        g.currentPlayer = -1
         g.mode = 1
         print(1)
     

@@ -1,5 +1,6 @@
 import pygame
 import globals as g
+import board as b
 
 from mainMenu import mainMenu
 
@@ -20,11 +21,12 @@ while g.running:
     if g.mode == 0:
         mainMenu()
     elif g.mode == 1: # Multiplayer
-        pass
+        b.gameloop()
     elif g.mode == 2: # Singleplayer
         pass
     elif g.mode == 3:
         pass
+
     try:
         pygame.display.flip()
     except:

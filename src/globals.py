@@ -13,6 +13,8 @@ img = None
 clock = None
 running = None
 
+currentPlayer = None
+
 def buttonClicked(start, endRel):
     end = [0, 0]
     end[0] = start[0] + endRel[0]
