@@ -31,6 +31,8 @@ def calcWin():
             pos2 = (x, y + 2)
             pos3 = (x, y + 3)
             pos4 = (x, y + 4)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -40,6 +42,8 @@ def calcWin():
             pos2 = (x + 2, y + 2)
             pos3 = (x + 3, y + 3)
             pos4 = (x + 4, y + 4)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -49,6 +53,8 @@ def calcWin():
             pos2 = (x + 2, y)
             pos3 = (x + 3, y)
             pos4 = (x + 4, y)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -58,6 +64,8 @@ def calcWin():
             pos2 = (x + 2, y - 2)
             pos3 = (x + 3, y - 3)
             pos4 = (x + 4, y - 4)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -67,6 +75,8 @@ def calcWin():
             pos2 = (x, y - 2)
             pos3 = (x, y - 3)
             pos4 = (x, y - 4)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -76,6 +86,8 @@ def calcWin():
             pos2 = (x - 2, y - 2)
             pos3 = (x - 3, y - 3)
             pos4 = (x - 4, y - 4)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -85,6 +97,8 @@ def calcWin():
             pos2 = (x - 2, y)
             pos3 = (x - 3, y)
             pos4 = (x - 4, y)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:
@@ -94,6 +108,8 @@ def calcWin():
             pos2 = (x - 2, y + 2)
             pos3 = (x - 3, y + 3)
             pos4 = (x - 4, y + 4)
+            g.winLine[0] = currentPosition
+            g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4) == 1:
                 return 1
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4) == -1:

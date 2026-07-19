@@ -15,6 +15,8 @@ running = None
 
 currentPlayer = None
 
+winLine = [None, None]
+
 defaultBoardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],

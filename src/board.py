@@ -49,6 +49,8 @@ def gameloop():
 
     if calcWin() != 0:
         render()
+        pygame.draw.line(g.screen, (255, 0, 0), (g.winLine[0][0]*45+45, g.winLine[0][1]*45+45), (g.winLine[1][0]*45+45, g.winLine[1][1]*45+45), 5)
+        pygame.display.flip()
         print(calcWin())
         sleep(1)
         g.mode = 0
