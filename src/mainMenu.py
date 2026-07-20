@@ -1,5 +1,6 @@
 import pygame
 import globals as g
+import board as b
 from time import sleep
 
 title = pygame.image.load("assets/title.bmp")
@@ -24,7 +25,8 @@ def mainMenu():
     buttonClicked = g.buttonClicked((210, 370), (300, 100))
     if buttonClicked:
         sleep(0.5)
-        g.currentPlayer = -1
+        b.generateStartPos()
+        g.currentPlayer = 1
         g.mode = 1
     
     # Settings button
