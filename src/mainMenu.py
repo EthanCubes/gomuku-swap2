@@ -2,6 +2,7 @@ import pygame
 import globals as g
 import board as b
 from time import sleep
+import singleplayer as s
 
 title = pygame.image.load("assets/title.bmp")
 singleplayer = pygame.image.load("assets/playWithBot.bmp")
@@ -18,16 +19,20 @@ def mainMenu():
     g.screen.blit(singleplayer, (210, 270))
     buttonClicked = g.buttonClicked((210, 270), (300, 100))
     if buttonClicked:
+        g.currentPlayer = 1
+        s.setup()
         g.mode = 2
+        b.generateStartPos()
+        sleep(0.5)
 
     # "Multiplayer" button
     g.screen.blit(multiplayer, (210, 370))
     buttonClicked = g.buttonClicked((210, 370), (300, 100))
     if buttonClicked:
-        sleep(0.5)
         b.generateStartPos()
         g.currentPlayer = 1
         g.mode = 1
+        sleep(0.5)
     
     # Settings button
     g.screen.blit(settings, (210, 470))

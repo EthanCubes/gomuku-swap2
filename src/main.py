@@ -1,6 +1,7 @@
 import pygame
 import globals as g
 import offlineMultiplayer as m
+import singleplayer as s
 
 from mainMenu import mainMenu
 
@@ -30,6 +31,7 @@ while g.running:
         m.gameloop()
     elif g.mode == 2: # Singleplayer
         pygame.display.set_caption("Gomuku Swap2: Game vs Bot")
+        s.gameloop()
     elif g.mode == 3:
         pygame.display.set_caption("Gomuku Swap2: Settings")
 
