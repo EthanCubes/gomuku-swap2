@@ -9,8 +9,3 @@ def gameloop():
     b.render()
     calcWin()
     g.clock.tick(60)
-    for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                g.mode = 0
-                g.resetBoard()

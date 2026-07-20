@@ -18,6 +18,10 @@ while g.running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             g.running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                g.mode = 0
+                g.resetBoard()
     if g.mode == 0:
         mainMenu()
     elif g.mode == 1: # Multiplayer
