@@ -1,7 +1,6 @@
 import globalData as g
 from random import randint
 import board as b
-from time import sleep
 
 def placeRandomly():
     valid = False
@@ -22,6 +21,5 @@ def analyze():
     return placeRandomly()
 
 def botPlaceStone():
-    sleep(0.25)
     pos1, pos2 = analyze()
     b.placeStone(pos1, pos2, g.currentPlayer)
