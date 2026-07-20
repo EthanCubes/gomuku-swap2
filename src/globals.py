@@ -13,6 +13,7 @@ img = None
 clock = None
 running = None
 
+starter = None
 currentPlayer = None
 
 winLine = [None, None]
