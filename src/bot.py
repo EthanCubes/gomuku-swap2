@@ -12,3 +12,12 @@ def botPlaceStone():
         if g.boardPositions[pos2][pos1] == 0:
             valid = True
     b.placeStone(pos1, pos2, g.currentPlayer)
+
+def analyze():
+    # check for unblocked 3 in a row to block
+    # check for 4 in a row to block
+    # check for ways to get 5 in a row in 1 turn
+    # check for ways to get 4 in a row in 1 turn
+    # check for ways to get unblocked 3 in a row in 1 turn
+    # check for ways to make 2x2 square
+    pass
