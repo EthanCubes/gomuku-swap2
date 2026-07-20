@@ -15,6 +15,7 @@ g.running = True
 g.mode = 0
 
 while g.running:
+    pygame.display.set_caption("Gomuku Swap2")
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             g.running = False

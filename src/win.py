@@ -124,7 +124,10 @@ def calcWin():
         b.render()
         pygame.draw.line(g.screen, (255, 0, 0), (g.winLine[0][0]*45+45, g.winLine[0][1]*45+45), (g.winLine[1][0]*45+45, g.winLine[1][1]*45+45), 5)
         pygame.display.flip()
-        print(generateScan())
+        if generateScan() == 1:
+            pygame.display.set_caption("Gomuku Swap2: White victory!")
+        else:
+            pygame.display.set_caption("Gomuku Swap2: Black Victory!")
         sleep(1)
         g.mode = 0
         g.resetBoard()
