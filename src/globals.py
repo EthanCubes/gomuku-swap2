@@ -14,6 +14,8 @@ clock = None
 running = None
 
 starter = None
+botColor = None
+playerColor = None
 currentPlayer = None
 
 winLine = [None, None]

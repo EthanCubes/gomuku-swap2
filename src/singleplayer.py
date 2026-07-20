@@ -8,6 +8,12 @@ import bot
 
 def setup():
     g.starter = randint(0, 1) # 0 is bot, 1 is human
+    if g.starter == 0:
+        g.botColor = 1
+        g.playerColor = -1
+    else:
+        g.botColor = -1
+        g.playerColor = 1
 
 def gameloop():
     if g.currentPlayer == 1:
