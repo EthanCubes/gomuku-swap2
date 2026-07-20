@@ -30,7 +30,10 @@ while g.running:
         pygame.display.set_caption("Gomuku Swap2: Local Multiplayer game")
         m.gameloop()
     elif g.mode == 2: # Singleplayer
-        pygame.display.set_caption("Gomuku Swap2: Game vs Bot")
+        if g.starter == 0:
+            pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are black)")
+        else:
+            pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are white)")
         s.gameloop()
     elif g.mode == 3:
         pygame.display.set_caption("Gomuku Swap2: Settings")

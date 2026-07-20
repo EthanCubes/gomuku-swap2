@@ -5,8 +5,6 @@ from time import sleep
 import board as b
 from random import randint
 
-black = None
-
 def setup():
     g.starter = randint(0, 1) # 0 is bot, 1 is human
     if g.starter == 0:
