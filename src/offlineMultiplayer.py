@@ -1,6 +1,6 @@
 import pygame
 from win import *
-import globals as g
+import globalData as g
 from time import sleep
 import board as b
 

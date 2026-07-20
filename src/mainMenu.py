@@ -1,5 +1,5 @@
 import pygame
-import globals as g
+import globalData as g
 import board as b
 from time import sleep
 import singleplayer as s

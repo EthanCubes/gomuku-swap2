@@ -1,5 +1,5 @@
 import pygame
-import globals as g
+import globalData as g
 import offlineMultiplayer as m
 import singleplayer as s
 

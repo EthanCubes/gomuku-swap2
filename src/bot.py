@@ -1,4 +1,4 @@
-import globals as g
+import globalData as g
 from random import randint
 import board as b
 from time import sleep
