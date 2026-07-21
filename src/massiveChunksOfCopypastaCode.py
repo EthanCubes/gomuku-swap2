@@ -262,9 +262,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1, currentPosition, pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1, currentPosition, pos1)
             # NE
             pos1 = (x + 1, y + 1)
@@ -272,9 +272,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1)
             # E
             pos1 = (x + 1, y)
@@ -282,9 +282,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1)
             # SE
             pos1 = (x + 1, y - 1)
@@ -292,9 +292,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1)
             # S
             pos1 = (x, y - 1)
@@ -302,9 +302,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos)
             # Sw
             pos1 = (x - 1, y - 1)
@@ -312,9 +312,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1)
             # W
             pos1 = (x - 1, y)
@@ -322,9 +322,9 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1)
             # NW
             pos1 = (x - 1, y + 1)
@@ -332,8 +332,8 @@ def generateScan2(boardPosition):
                 valid = True
             else:
                 valid = False
-            if scanPosition3(currentPosition, pos1, boardPosition) == 1 and valid:
+            if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
-            elif scanPosition3(currentPosition, pos1, boardPosition) == -1 and valid:
+            elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1)
     return (None,0)
