@@ -5,7 +5,7 @@ import board as b
 
 def scanPosition(basePos, pos1, pos2, pos3, pos4, boardPosition):
     try:
-        basePosStatus = g.boardPositions[basePos[1]][basePos[0]]
+        basePosStatus = boardPosition[basePos[1]][basePos[0]]
         if basePosStatus == 0:
             return 0
         pos1Status = boardPosition[pos1[1]][pos1[0]]
