@@ -37,9 +37,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # NE
             pos1 = (x + 1, y + 1)
             pos2 = (x + 2, y + 2)
@@ -48,9 +48,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # E
             pos1 = (x + 1, y)
             pos2 = (x + 2, y)
@@ -59,9 +59,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # SE
             pos1 = (x + 1, y - 1)
             pos2 = (x + 2, y - 2)
@@ -70,9 +70,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # S
             pos1 = (x, y - 1)
             pos2 = (x, y - 2)
@@ -81,9 +81,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # Sw
             pos1 = (x - 1, y - 1)
             pos2 = (x - 2, y - 2)
@@ -92,9 +92,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # W
             pos1 = (x - 1, y)
             pos2 = (x - 2, y)
@@ -103,9 +103,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
+                return (currentPosition,-1)
             # NW
             pos1 = (x - 1, y + 1)
             pos2 = (x - 2, y + 2)
@@ -114,17 +114,17 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1:
-                return 1
+                return (currentPosition,1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1:
-                return -1
-    return 0
+                return (currentPosition,-1)
+    return (None,0)
 
 def calcWin():
-    if generateScan(g.boardPositions) != 0:
+    if generateScan(g.boardPositions)[1] != 0:
         b.render()
         pygame.draw.line(g.screen, (255, 0, 0), (g.winLine[0][0]*45+45, g.winLine[0][1]*45+45), (g.winLine[1][0]*45+45, g.winLine[1][1]*45+45), 5)
         pygame.display.flip()
-        if generateScan(g.boardPositions) == 1:
+        if generateScan(g.boardPositions)[1] == 1:
             pygame.display.set_caption("Gomuku Swap2: White victory!")
         else:
             pygame.display.set_caption("Gomuku Swap2: Black Victory!")

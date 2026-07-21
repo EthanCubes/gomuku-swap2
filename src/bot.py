@@ -3,6 +3,7 @@ from random import randint
 import board as b
 import win as w
 import copy
+import massiveChunksOfCopypastaCode as mcocc
 
 def placeRandomly():
     valid = False
@@ -25,21 +26,37 @@ def analyze():
         for y in range(15):
             if testBoard[y][x] == 0:
                 testBoard[y][x] = g.botColor
-                if w.generateScan(testBoard) == g.botColor:
+                if w.generateScan(testBoard)[1] == g.botColor:
                     return x,y
                 testBoard[y][x] = 0
     for x in range(15):
         for y in range(15):
             if testBoard[y][x] == 0:
                 testBoard[y][x] = g.playerColor
-                if w.generateScan(testBoard) == g.playerColor:
+                if w.generateScan(testBoard)[1] == g.playerColor:
                     return x,y
                 testBoard[y][x] = 0
+    for x in range(15):
+        for y in range(15):
+            if testBoard[y][x] == 0:
+                testBoard[y][x] = g.playerColor
+                if mcocc.generateScan4(testBoard)[1] == g.playerColor:
+                    if mcocc.generateScan4(testBoard)[0] == (x,y):
+                        return x,y
+                testBoard[y][x] = 0
+    for x in range(15):
+        for y in range(15):
+            if testBoard[y][x] == 0:
+                testBoard[y][x] = g.botColor
+                if mcocc.generateScan4(testBoard)[1] == g.botColor:
+                    if mcocc.generateScan4(testBoard)[0] == (x,y):
+                        return x,y
+                testBoard[y][x] = 0
+
     return placeRandomly()
                 
 
 
 def botPlaceStone():
     pos1, pos2 = analyze()
-    print(pos1, pos2)
     b.placeStone(pos1, pos2, g.currentPlayer)
