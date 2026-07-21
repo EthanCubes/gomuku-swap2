@@ -40,16 +40,18 @@ def analyze():
         for y in range(15):
             if testBoard[y][x] == 0:
                 testBoard[y][x] = g.playerColor
-                if mcocc.generateScan4(testBoard)[1] == g.playerColor:
-                    if mcocc.generateScan4(testBoard)[0] == (x,y):
+                scan = mcocc.generateScan4(testBoard)
+                if scan[0] == g.playerColor:
+                    if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y) or scan[4] == (x,y):
                         return x,y
                 testBoard[y][x] = 0
     for x in range(15):
         for y in range(15):
             if testBoard[y][x] == 0:
                 testBoard[y][x] = g.botColor
-                if mcocc.generateScan4(testBoard)[1] == g.botColor:
-                    if mcocc.generateScan4(testBoard)[0] == (x,y):
+                scan = mcocc.generateScan4(testBoard)
+                if scan[0] == g.botColor:
+                    if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y) or scan[4] == (x,y):
                         return x,y
                 testBoard[y][x] = 0
 
