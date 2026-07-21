@@ -27,7 +27,7 @@ def analyze():
         for y in range(15):
             if testBoard[y][x] == 0:
                 testBoard[y][x] = g.botColor
-                if w.generatbotColoreScan(testBoard)[1] == g.botColor:
+                if w.generateScan(testBoard)[1] == g.botColor:
                     return x,y
                 testBoard[y][x] = 0
     # Check for 4-in-a-rows to block
@@ -59,6 +59,15 @@ def analyze():
                         return x,y
                 testBoard[y][x] = 0
     # Check for any way to get 3-in-a-row
+    for x in range(15):
+        for y in range(15):
+            if testBoard[y][x] == 0:
+                testBoard[y][x] = g.botColor
+                scan = mcocc.generateScan3(testBoard)
+                if scan[0] == g.botColor:
+                    if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y):
+                        return x,y
+                testBoard[y][x] = 0
     # Check for any way to get 2 in a row
 
     return placeRandomly()
