@@ -26,64 +26,80 @@ def generateScan4(boardPosition):
             pos1 = (x, y + 1)
             pos2 = (x, y + 2)
             pos3 = (x, y + 3)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (currentPosition,1)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (currentPosition,-1)
             # NE
             pos1 = (x + 1, y + 1)
             pos2 = (x + 2, y + 2)
             pos3 = (x + 3, y + 3)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
             # E
             pos1 = (x + 1, y)
             pos2 = (x + 2, y)
             pos3 = (x + 3, y)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
             # SE
             pos1 = (x + 1, y - 1)
             pos2 = (x + 2, y - 2)
             pos3 = (x + 3, y - 3)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
             # S
             pos1 = (x, y - 1)
             pos2 = (x, y - 2)
             pos3 = (x, y - 3)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
             # Sw
             pos1 = (x - 1, y - 1)
             pos2 = (x - 2, y - 2)
             pos3 = (x - 3, y - 3)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
             # W
             pos1 = (x - 1, y)
             pos2 = (x - 2, y)
             pos3 = (x - 3, y)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
             # NW
             pos1 = (x - 1, y + 1)
             pos2 = (x - 2, y + 2)
             pos3 = (x - 3, y + 3)
-            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1:
+            if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
+                valid = True
+            if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
-            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1:
+            elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2,pos3)
     return (None,0)
