@@ -241,10 +241,8 @@ def scanPosition2(basePos, pos1, boardPosition):
         if basePosStatus == 0:
             return 0
         pos1Status = boardPosition[pos1[1]][pos1[0]]
-        pos2Status = boardPosition[pos2[1]][pos2[0]]
         if basePosStatus == pos1Status:
-            if basePosStatus == pos2Status:
-                return basePosStatus
+            return basePosStatus
     except:
         return 0
     return 0
@@ -252,7 +250,7 @@ def scanPosition2(basePos, pos1, boardPosition):
 def generateScan2(boardPosition):
     for y in range(15):
         for x in range(15):
-            if random.randint(0, 100) < 99:
+            if random.randint(0, 100) < 40:
                 continue
             currentPosition = (x, y)
             pos1 = ()
@@ -305,7 +303,7 @@ def generateScan2(boardPosition):
             if scanPosition2(currentPosition, pos1, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1)
             elif scanPosition2(currentPosition, pos1, boardPosition) == -1 and valid:
-                return (-1,currentPosition,pos)
+                return (-1,currentPosition,pos1)
             # Sw
             pos1 = (x - 1, y - 1)
             if not (pos1[0] < 0 or pos1[0] > 14 or pos1[1] < 0 or pos1[1] > 14):
