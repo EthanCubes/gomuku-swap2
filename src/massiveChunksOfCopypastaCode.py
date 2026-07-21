@@ -28,6 +28,8 @@ def generateScan4(boardPosition):
             pos3 = (x, y + 3)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (currentPosition,1)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -38,6 +40,8 @@ def generateScan4(boardPosition):
             pos3 = (x + 3, y + 3)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -48,6 +52,8 @@ def generateScan4(boardPosition):
             pos3 = (x + 3, y)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -58,6 +64,8 @@ def generateScan4(boardPosition):
             pos3 = (x + 3, y - 3)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -68,6 +76,8 @@ def generateScan4(boardPosition):
             pos3 = (x, y - 3)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -78,6 +88,8 @@ def generateScan4(boardPosition):
             pos3 = (x - 3, y - 3)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -88,6 +100,8 @@ def generateScan4(boardPosition):
             pos3 = (x - 3, y)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
@@ -98,6 +112,8 @@ def generateScan4(boardPosition):
             pos3 = (x - 3, y + 3)
             if not (pos3[0] < 0 or pos3[0] > 14 or pos3[1] < 0 or pos3[1] > 14):
                 valid = True
+            else:
+                valid = False
             if scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == 1 and valid:
                 return (1,currentPosition,pos1,pos2,pos3)
             elif scanPosition4(currentPosition, pos1, pos2, pos3, boardPosition) == -1 and valid:
