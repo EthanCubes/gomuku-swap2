@@ -120,7 +120,7 @@ def generateScan(boardPosition):
     return 0
 
 def calcWin():
-    if generateScan() != 0:
+    if generateScan(g.boardPositions) != 0:
         b.render()
         pygame.draw.line(g.screen, (255, 0, 0), (g.winLine[0][0]*45+45, g.winLine[0][1]*45+45), (g.winLine[1][0]*45+45, g.winLine[1][1]*45+45), 5)
         pygame.display.flip()
