@@ -22,13 +22,15 @@ def analyze():
     Place randomly because why not
     '''
     testBoard = copy.deepcopy(g.boardPositions)
+    # Check for ways to win in 1 turn
     for x in range(15):
         for y in range(15):
             if testBoard[y][x] == 0:
                 testBoard[y][x] = g.botColor
-                if w.generateScan(testBoard)[1] == g.botColor:
+                if w.generatbotColoreScan(testBoard)[1] == g.botColor:
                     return x,y
                 testBoard[y][x] = 0
+    # Check for 4-in-a-rows to block
     for x in range(15):
         for y in range(15):
             if testBoard[y][x] == 0:
@@ -36,15 +38,7 @@ def analyze():
                 if w.generateScan(testBoard)[1] == g.playerColor:
                     return x,y
                 testBoard[y][x] = 0
-    for x in range(15):
-        for y in range(15):
-            if testBoard[y][x] == 0:
-                testBoard[y][x] = g.playerColor
-                scan = mcocc.generateScan4(testBoard)
-                if scan[0] == g.playerColor:
-                    if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y) or scan[4] == (x,y):
-                        return x,y
-                testBoard[y][x] = 0
+    # Check for ways to get 4-in-a-row in one turn
     for x in range(15):
         for y in range(15):
             if testBoard[y][x] == 0:
@@ -54,6 +48,18 @@ def analyze():
                     if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y) or scan[4] == (x,y):
                         return x,y
                 testBoard[y][x] = 0
+    # Check for any way to block 3-in a rows
+    for x in range(15):
+        for y in range(15):
+            if testBoard[y][x] == 0:
+                testBoard[y][x] = g.playerColor
+                scan = mcocc.generateScan4(testBoard)
+                if scan[0] == g.playerColor:
+                    if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y) or scan[4] == (x,y):
+                        return x,y
+                testBoard[y][x] = 0
+    # Check for any way to get 3-in-a-row
+    # Check for any way to get 2 in a row
 
     return placeRandomly()
                 
