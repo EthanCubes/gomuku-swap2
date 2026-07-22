@@ -19,6 +19,7 @@ def mainMenu():
     g.screen.blit(singleplayer, (210, 270))
     buttonClicked = g.buttonClicked((210, 270), (300, 100))
     if buttonClicked:
+        pygame.mixer.music.stop()
         g.currentPlayer = 1
         s.setup()
         g.mode = 2
@@ -29,6 +30,7 @@ def mainMenu():
     g.screen.blit(multiplayer, (210, 370))
     buttonClicked = g.buttonClicked((210, 370), (300, 100))
     if buttonClicked:
+        pygame.mixer.music.stop()
         b.generateStartPos()
         g.currentPlayer = 1
         g.mode = 1
@@ -38,10 +40,12 @@ def mainMenu():
     g.screen.blit(settings, (210, 470))
     buttonClicked = g.buttonClicked((210, 470), (140, 40))
     if buttonClicked:
+        pygame.mixer.music.stop()
         g.mode = 3
 
     # Quit game button
     g.screen.blit(quit, (370, 470))
     buttonClicked = g.buttonClicked((370, 470), (140, 40))
     if buttonClicked:
+        pygame.mixer.music.stop()
         g.running = False

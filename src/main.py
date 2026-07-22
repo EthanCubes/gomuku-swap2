@@ -2,6 +2,9 @@ import pygame
 import globalData as g
 import offlineMultiplayer as m
 import singleplayer as s
+import settings as c
+
+import random
 
 from mainMenu import mainMenu
 
@@ -16,6 +19,16 @@ g.running = True
 g.mode = 0
 
 while g.running:
+    if not pygame.mixer.music.get_busy():
+        pygame.mixer.music.unload()
+        number = random.randint(1,3)
+        if number == 1:
+            pygame.mixer.music.load("assets/music/amazingPlan.mp3")
+        elif number == 2:
+            pygame.mixer.music.load("assets/music/elevatorMusic.mp3")
+        else:
+            pygame.mixer.music.load("assets/music/schemingWeaselFaster.mp3")
+        pygame.mixer.music.play()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             g.running = False
@@ -37,6 +50,7 @@ while g.running:
         s.gameloop()
     elif g.mode == 3:
         pygame.display.set_caption("Gomuku Swap2: Settings")
+        c.settingsLoop()
 
     try:
         pygame.display.flip()
