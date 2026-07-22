@@ -7,7 +7,7 @@ def settingsLoop():
     musicVolume = 1
     try:
         data = None
-        with open("gomuku-options.txt") as f:
+        with open("~/.gomuku-options.txt") as f:
             data = f.read()
         dataList = data.split("\n")
         scaleMultiplier = dataList[0]
