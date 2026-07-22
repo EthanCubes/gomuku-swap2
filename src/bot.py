@@ -68,7 +68,8 @@ def analyze():
                     if scan[1] == (x,y) or scan[2] == (x,y) or scan[3] == (x,y):
                         return x,y
                 testBoard[y][x] = 0
-
+    if randint(1,100) > 25:
+        return mcocc.connect2()
     return placeRandomly()
                 
 

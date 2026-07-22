@@ -233,3 +233,17 @@ def generateScan3(boardPosition):
             elif scanPosition3(currentPosition, pos1, pos2, boardPosition) == -1 and valid:
                 return (-1,currentPosition,pos1,pos2)
     return (None,0)
+
+def connect2():
+    import globalData as g
+    valid = False
+    while not valid:
+        direction = random.randint(0,7)
+        dlist = [(0,1),(0,-1),(1,0),(0,1),(1,1),(1,-1),(-1,1),(-1,-1)]
+        x = random.randint(0,14)
+        y = random.randint(0,14)
+        if g.boardPositions[y][x] == g.botColor:
+            y += dlist[direction][1]
+            x += dlist[direction][0]
+            if g.boardPositions[y][x] == 0:
+                return x, y
