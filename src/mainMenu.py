@@ -7,7 +7,6 @@ import singleplayer as s
 title = pygame.image.load("assets/title.bmp")
 singleplayer = pygame.image.load("assets/playWithBot.bmp")
 multiplayer = pygame.image.load("assets/playWFriends.bmp")
-settings = pygame.image.load("assets/settings.bmp")
 quit = pygame.image.load("assets/quit.bmp")
 
 def mainMenu():
@@ -37,8 +36,8 @@ def mainMenu():
         sleep(0.5)
 
     # Quit game button
-    g.screen.blit(quit, (370, 470))
-    buttonClicked = g.buttonClicked((370, 470), (140, 40))
+    g.screen.blit(quit, (210, 470))
+    buttonClicked = g.buttonClicked((210, 470), (300, 80))
     if buttonClicked:
         pygame.mixer.music.stop()
         g.running = False
