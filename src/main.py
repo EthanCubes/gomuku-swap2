@@ -2,7 +2,6 @@ import pygame
 import globalData as g
 import offlineMultiplayer as m
 import singleplayer as s
-import settings as c
 
 import random
 
@@ -17,8 +16,6 @@ g.clock = pygame.time.Clock()
 g.running = True 
 
 g.mode = 0
-
-c.settingsLoop()
 
 while g.running:
     if not pygame.mixer.music.get_busy():
@@ -50,9 +47,6 @@ while g.running:
         else:
             pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are white)")
         s.gameloop()
-    elif g.mode == 3:
-        pygame.display.set_caption("Gomuku Swap2: Settings")
-        c.settingsLoop()
 
     try:
         pygame.display.flip()
