@@ -19,6 +19,7 @@ g.mode = 0
 
 while g.running:
     if not pygame.mixer.music.get_busy():
+        pygame.mixer.music.set_volume(0)
         pygame.mixer.music.unload()
         number = random.randint(1,3)
         if number == 1:
