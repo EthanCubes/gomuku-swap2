@@ -35,13 +35,6 @@ def mainMenu():
         g.currentPlayer = 1
         g.mode = 1
         sleep(0.5)
-    
-    # Settings button
-    g.screen.blit(settings, (210, 470))
-    buttonClicked = g.buttonClicked((210, 470), (140, 40))
-    if buttonClicked:
-        pygame.mixer.music.stop()
-        g.mode = 3
 
     # Quit game button
     g.screen.blit(quit, (370, 470))
