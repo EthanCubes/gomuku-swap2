@@ -18,6 +18,8 @@ g.running = True
 
 g.mode = 0
 
+c.settingsLoop()
+
 while g.running:
     if not pygame.mixer.music.get_busy():
         pygame.mixer.music.unload()
