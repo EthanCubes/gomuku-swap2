@@ -163,3 +163,15 @@ def calcWin():
         sleep(1)
         g.mode = 0
         g.resetBoard()
+    placedStones = 0
+    for y in range(15):
+        for x in range(15):
+            if g.boardPositions[y][x] != 0:
+                placedStones += 1
+    if placedStones == 225:
+        b.render()
+        pygame.display.flip()
+        pygame.display.set_caption("Gomuku Swap2: Draw!")
+        sleep(1)
+        g.mode = 0
+        g.resetBoard()
