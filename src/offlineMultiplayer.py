@@ -8,4 +8,4 @@ def gameloop():
     b.userPlaceStone()
     b.render()
     calcWin()
-    g.clock.tick(60)
+    g.clock.tick(30)

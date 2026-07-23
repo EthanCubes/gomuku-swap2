@@ -28,4 +28,4 @@ def gameloop():
             bot.botPlaceStone()
     b.render()
     calcWin()
-    g.clock.tick(60)
+    g.clock.tick(30)
