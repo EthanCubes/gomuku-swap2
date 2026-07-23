@@ -6,10 +6,10 @@ A east asian board game simular to tic-tac-toe, except it's played on a 15x15 bo
 ## Quickstart
 ## Features
 ## How to run code locally
-Requires Python 3.14.6 and Pygame 2.6.1. Preferably inside a virtual environment.
-Clone the project from GitHub, then run board.py.
+Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside of the newer Python versions, but on 3.14.6 specifically the music is broken). Preferably inside a virtual environment.
+Clone the project from GitHub, then run main.py.
 
-Or you can follow the Quickstart instructions above and download the game from itch.io (not there yet as of July 16th 16:39).
+Or you can follow the Quickstart instructions above and download the game from itch.io (not there yet as of July 22th 16:39).
 
 ## How it works
 Pygame creates a window and draws lines to form the game board. Circles are drawn to represent stones according to the board positions list. Clicking on a spot on the board uses math to find which spot the stone should be placed at, and together with the current turn changes the list of board positions to include the placed stone.
