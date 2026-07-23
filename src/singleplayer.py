@@ -8,7 +8,6 @@ import bot
 
 def setup():
     g.starter = randint(0, 1) # 0 is bot, 1 is human
-    g.currentPlayer = g.starter
     if g.starter == 0:
         g.botColor = 1
         g.playerColor = -1
