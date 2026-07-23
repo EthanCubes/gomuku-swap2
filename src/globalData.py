@@ -69,4 +69,5 @@ def buttonClicked(start, endRel):
 
 def resetBoard():
     global boardPositions, defaultBoardPositions
+    pygame.mixer.music.stop()
     boardPositions = [row[:] for row in defaultBoardPositions]
