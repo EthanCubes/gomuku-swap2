@@ -38,6 +38,7 @@ To find places to attack or defend, a function scans in all 8 directions for all
 ## Credits
 - [Pygame official documentation](https://www.pygame.org/docs/) was helpful in getting the project started.
 - [Pytutorial](https://pytutorial.com/python-pygame-draw-line-guide/) helped with drawing lines.
-- [GeeksForGeeks](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/) also helped with drawing lines.  
+- [GeeksForGeeks](https://www.geeksforgeeks.org/python/pygame-drawing-objects-and-shapes/) also helped with drawing lines.
+- [w3Schools](https://w3schools.com) is always a great help no matter what I am making.  
 - Music credit to Kevin MacCleod
 - [DeepSeek](https://deepseek.com) AI was used for debugging and for some emotional support when I didn't know what to do or came close to crashing out.
