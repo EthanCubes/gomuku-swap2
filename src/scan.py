@@ -60,4 +60,5 @@ def connect2():
             y += dlist[direction][1]
             x += dlist[direction][0]
             if g.boardPositions[y][x] == 0:
-                return x, y
+                return (x, y)
+    return None
