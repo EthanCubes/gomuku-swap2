@@ -16,14 +16,24 @@ def placeRandomly():
 
 def analyze():
     '''
-    ***Roadmap***
+    *** Roadmap ***
     Scan for immediate danger/win
     Place to create threats/thwart ones
     Place randomly because why not
+    *** Order of priority ***
+    1. Get 5
+    2. Block closed 4
+    3. Get close/open 4
+    4. Block open 3
+    5. Get open 3
+    6. Get closed 3
+    7. Place randomly
     '''
+    print(sc.generateScan([0,0,0,0,0,1]))
+    print("loser")
                 
 
 
 def botPlaceStone():
-    pos1, pos2 = analyze()
-    b.placeStone(pos1, pos2, g.currentPlayer)
+    analyze()
+    # b.placeStone(pos1, pos2, g.currentPlayer)
