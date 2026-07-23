@@ -14,7 +14,6 @@ def scanBoard(x, y, pattern): # now this is the hard part.
             dirScanList.append((x+i*int(direction[0]), y+i*int(direction[1])))
         statusList = []
         for item in dirScanList:
-            print(item)
             if not (item[0] < 0 or item[0] > 14 or item[1] < 0 or item[1] > 14):
                 statusList.append(g.boardPositions[item[1]][item[0]])
         scanList.append(statusList)
