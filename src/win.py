@@ -41,9 +41,9 @@ def generateScan(boardPosition):
             g.winLine[0] = currentPosition
             g.winLine[1] = pos4
             if scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == 1 and valid:
-                return (1, currentPosition, pos1, pos2, pos3, pos4)
+                return (currentPosition, 1)
             elif scanPosition(currentPosition, pos1, pos2, pos3, pos4, boardPosition) == -1 and valid:
-                return (-1, currentPosition, pos1, pos2, pos3, pos4)
+                return (currentPosition, -1)
             # NE
             pos1 = (x + 1, y + 1)
             pos2 = (x + 2, y + 2)
