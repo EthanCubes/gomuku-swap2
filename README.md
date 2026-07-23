@@ -5,6 +5,12 @@ A east asian board game simular to tic-tac-toe, except it's played on a 15x15 bo
 [Play it here]()
 ## Quickstart
 ## Features
+- A main menu with 3 clickable buttons that each do their own thing.
+- A 15x15 Go board that Gomuku is played on.
+- A local multiplayer mode that allows for you to play against your IRL friends (or yourself if you have no friends)
+- A bot that is somewhat intelligent and actively responds to your threats and creates it's own threats.
+- Background music that is somewhat annoying.
+
 ## How to run code locally
 Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside of the newer Python versions, but on 3.14.6 specifically the music is broken). Preferably inside a virtual environment.
 Clone the project from GitHub, then run main.py.
