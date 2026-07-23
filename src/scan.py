@@ -25,14 +25,27 @@ def scanBoard(x, y, pattern): # now this is the hard part.
             return -1
     return None
 
-def generateScan(pattern): # pattern has to be 6 characters.
+def generateScan(pattern, color): # pattern has to be 6 characters.
     posList = []
     for y in range(15):
         for x in range(15):
             scan = scanBoard(x,y,pattern)
             if scan == -1 or scan == 1:
                 posList.append((scan, (x, y))) # Appends to the list color of the combonation and the coordinates.
-    return posList
+    whitelist = []
+    blacklist = []
+    if color != 0:
+        for item in posList:
+            if item[0] == 1:
+                whitelist.append(item)
+            else:
+                blacklist.append(item)
+    else:
+        return posList
+    if color == 1:
+        return whitelist
+    elif color == -1:
+        return blacklist
 
 # This function is like pretty good for now, doesn't need to be changed.
 def connect2():
