@@ -29,9 +29,6 @@ def analyze():
     6. Get closed 3
     7. Place randomly
     '''
-    print(sc.generateScan([0,0,0,0,0,1]))
-    print("loser")
-                
 
 
 def botPlaceStone():
