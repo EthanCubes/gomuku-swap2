@@ -42,3 +42,4 @@ To find places to attack or defend, a function scans in all 8 directions for all
 - [w3Schools](https://w3schools.com) is always a great help no matter what I am making.  
 - Music credit to Kevin MacCleod
 - [DeepSeek](https://deepseek.com) AI was used for debugging and for some emotional support when I didn't know what to do or came close to crashing out.
+- [CommonLuke's Video on making a chess engine]() was a major inspiration in me starting this project. The video is also really entertaining, I've watched it like 3 times now.
