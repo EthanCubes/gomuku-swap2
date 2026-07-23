@@ -62,6 +62,8 @@ def connect2():
         if g.boardPositions[y][x] == g.botColor:
             y += dlist[direction][1]
             x += dlist[direction][0]
+            if x < 0 or x > 14 or y < 0 or y > 14:
+                continue
             if g.boardPositions[y][x] == 0:
                 return (x, y)
     return None
