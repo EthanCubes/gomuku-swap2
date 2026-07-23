@@ -4,18 +4,25 @@ A east asian board game simular to tic-tac-toe, except it's played on a 15x15 bo
 
 [Play it here]()
 ## Quickstart
+Download the game files from Itch.io according to your operating system, and run them.
+
+If you're on Linux, I'm so sorry I can't give you a dedicated version for you, but just run the windows version with Wine. I'd assume you know how to use Wine already, but here's how to download wine just in case:
+In the terminal:
+- Arch-based systems: ```sudo pacman -S wine```
+- Everything else, probably: ```sudo apt install wine```
+Then just like doubleclick the .exe file or run ```wine /path/to/the/exe/gomuku-swap2.exe```
+
 ## Features
 - A main menu with 3 clickable buttons that each do their own thing.
-- A 15x15 Go board that Gomuku is played on.
+- A 15x15 Go board 
+that Gomuku is played on.
 - A local multiplayer mode that allows for you to play against your IRL friends (or yourself if you have no friends)
 - A bot that is somewhat intelligent and actively responds to your threats and creates it's own threats.
 - Background music that is somewhat annoying.
 
 ## How to run code locally
-Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside of the newer Python versions, but on 3.14.6 specifically the music is broken). Preferably inside a virtual environment.
+Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside of the newer Python versions, but on 3.14.6 specifically the music is broken). You will probably have to install them inside of a venv since this program uses an older version of Python as aforementioned.
 Clone the project from GitHub, then run main.py.
-
-Or you can follow the Quickstart instructions above and download the game from itch.io (not there yet as of July 22th 16:39).
 
 ## How it works
 Pygame creates a window and draws lines to form the game board. Circles are drawn to represent stones according to the board positions list. Clicking on a spot on the board uses math to find which spot the stone should be placed at, and together with the current turn changes the list of board positions to include the placed stone.
