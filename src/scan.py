@@ -43,12 +43,13 @@ def generateScan(pattern, color): # pattern has to be 6 characters.
                     whitelist.append(item)
                 else:
                     blacklist.append(item)
+                    if color == 1:
+                        return whitelist if whitelist else None
+                    elif color == -1:
+                        return blacklist if whitelist else None
         else:
             return posList
-        if color == 1:
-            return whitelist
-        elif color == -1:
-            return blacklist
+    return None
 
 # This function is like pretty good for now, doesn't need to be changed.
 def connect2():
