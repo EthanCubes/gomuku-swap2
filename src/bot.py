@@ -29,10 +29,9 @@ def analyze():
     8. Get 2 in a row
     9. Place randomly
     """
-    scanned = []
+
     # Get 5
-    scanned.append(sc.generateScan([0,1,1,1,1,0], gD.botColor))
-    scanned.append(sc.generateScan([0,1,1,1,1,-1], gD.botColor))
+    scanned = [sc.generateScan([0, 1, 1, 1, 1, 0], gD.botColor), sc.generateScan([0, 1, 1, 1, 1, -1], gD.botColor)]
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
