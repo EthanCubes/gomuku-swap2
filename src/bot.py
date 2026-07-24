@@ -5,6 +5,8 @@ import scan as sc
 
 def place_randomly():
     valid = False
+    pos1 = 0
+    pos2 = 0
     while not valid:
         pos1 = randint(0, 14)
         pos2 = randint(0, 14)
