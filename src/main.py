@@ -10,7 +10,7 @@ from main_menu import main_menu_loop
 pygame.init()
 g.screen = pygame.display.set_mode((720, 720))
 pygame.display.set_caption("Gomuku Swap2")
-g.img = pygame.image.load("assets/gomuku-swap2icon.bmp")
+g.img = pygame.image.load(g.PROJECT_ROOT / "assets" / "gomuku-swap2icon.bmp")
 pygame.display.set_icon(g.img)
 g.clock = pygame.time.Clock()
 g.running = True
@@ -23,11 +23,11 @@ while g.running:
         pygame.mixer.music.unload()
         number = random.randint(1,3)
         if number == 1:
-            pygame.mixer.music.load("assets/music/amazingPlan.mp3")
+            pygame.mixer.music.load(g.PROJECT_ROOT / "assets" / "music" / "amazingPlan.mp3")
         elif number == 2:
-            pygame.mixer.music.load("assets/music/elevatorMusic.mp3")
+            pygame.mixer.music.load(g.PROJECT_ROOT / "assets" / "music" / "elevatorMusic.mp3")
         else:
-            pygame.mixer.music.load("assets/music/schemingWeaselFaster.mp3")
+            pygame.mixer.music.load(g.PROJECT_ROOT / "assets" / "music" / "schemingWeaselFaster.mp3")
         pygame.mixer.music.play()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

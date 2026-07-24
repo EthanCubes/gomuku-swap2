@@ -1,4 +1,8 @@
 import pygame
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
 
 '''
 0: Main menu

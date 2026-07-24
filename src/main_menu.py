@@ -1,13 +1,15 @@
 import pygame
+
+import global_data
 import global_data as gD
 import board as b
 from time import sleep
 import singleplayer as s
 
-title = pygame.image.load("assets/title.bmp")
-singleplayer = pygame.image.load("assets/playWithBot.bmp")
-multiplayer = pygame.image.load("assets/playWFriends.bmp")
-quit_button = pygame.image.load("assets/quit.bmp")
+title = pygame.image.load(gD.PROJECT_ROOT / "assets" / "title.bmp")
+singleplayer = pygame.image.load(gD.PROJECT_ROOT / "assets" / "playWithBot.bmp")
+multiplayer = pygame.image.load(gD.PROJECT_ROOT / "assets" / "playWFriends.bmp")
+quit_button = pygame.image.load(gD.PROJECT_ROOT / "assets" / "quit.bmp")
 
 def main_menu_loop():
     gD.screen.fill("peru")
