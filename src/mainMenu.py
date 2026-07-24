@@ -1,5 +1,5 @@
 import pygame
-import globalData as g
+import globalData as gD
 import board as b
 from time import sleep
 import singleplayer as s
@@ -7,37 +7,37 @@ import singleplayer as s
 title = pygame.image.load("assets/title.bmp")
 singleplayer = pygame.image.load("assets/playWithBot.bmp")
 multiplayer = pygame.image.load("assets/playWFriends.bmp")
-quit = pygame.image.load("assets/quit.bmp")
+quit_button = pygame.image.load("assets/quit.bmp")
 
-def mainMenu():
-    g.screen.fill("peru")
+def main_menu_loop():
+    gD.screen.fill("peru")
 
-    g.screen.blit(title, (210, 90))
+    gD.screen.blit(title, (210, 90))
 
     # "Singleplayer" button
-    g.screen.blit(singleplayer, (210, 270))
-    buttonClicked = g.button_clicked((210, 270), (300, 100))
-    if buttonClicked:
+    gD.screen.blit(singleplayer, (210, 270))
+    button_clicked = gD.button_clicked((210, 270), (300, 100))
+    if button_clicked:
         pygame.mixer.music.stop()
-        g.currentPlayer = 1
+        gD.currentPlayer = 1
         s.setup()
-        g.mode = 2
+        gD.mode = 2
         b.generate_start_pos()
         sleep(0.5)
 
     # "Multiplayer" button
-    g.screen.blit(multiplayer, (210, 370))
-    buttonClicked = g.button_clicked((210, 370), (300, 100))
-    if buttonClicked:
+    gD.screen.blit(multiplayer, (210, 370))
+    button_clicked = gD.button_clicked((210, 370), (300, 100))
+    if button_clicked:
         pygame.mixer.music.stop()
         b.generate_start_pos()
-        g.currentPlayer = 1
-        g.mode = 1
+        gD.currentPlayer = 1
+        gD.mode = 1
         sleep(0.5)
 
     # Quit game button
-    g.screen.blit(quit, (210, 470))
-    buttonClicked = g.button_clicked((210, 470), (300, 80))
-    if buttonClicked:
+    gD.screen.blit(quit_button, (210, 470))
+    button_clicked = gD.button_clicked((210, 470), (300, 80))
+    if button_clicked:
         pygame.mixer.music.stop()
-        g.running = False
+        gD.running = False

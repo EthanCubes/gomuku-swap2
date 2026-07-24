@@ -5,7 +5,7 @@ import singleplayer as s
 
 import random
 
-from mainMenu import mainMenu
+from mainMenu import main_menu_loop
 
 pygame.init()
 gD.screen = pygame.display.set_mode((720, 720))
@@ -38,7 +38,7 @@ while gD.running:
                 gD.reset_board()
     if gD.mode == 0:
         pygame.display.set_caption("Gomuku Swap2")
-        mainMenu()
+        main_menu_loop()
     elif gD.mode == 1: # Multiplayer
         pygame.display.set_caption("Gomuku Swap2: Local Multiplayer game")
         oM.gameloop()
