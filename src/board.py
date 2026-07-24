@@ -44,23 +44,19 @@ def render():
                 pygame.draw.circle(g.screen, color, (x_pos, y_pos), 20)
 
 def generate_start_pos():
-    stone1 = [None, None]
-    stone1[0] = random.randint(5, 9)
-    stone1[1] = random.randint(5, 9)
+    stone1 = [random.randint(5, 9), random.randint(5, 9)]
+    stone2 = [0,0] # Temporary placeholder
+    stone3 = [0,0] # Temporary placeholder
 
-    stone2 = [None, None]
     position_valid = False
     while not position_valid:
-        stone2[0] = random.randint(5, 9)
-        stone2[1] = random.randint(5, 9)
+        stone2 = [random.randint(5, 9), random.randint(5, 9)]
         if stone2 != stone1:
             position_valid = True
-    
-    stone3 = [None, None]
+
     position_valid = False
     while not position_valid:
-        stone3[0] = random.randint(5, 9)
-        stone3[1] = random.randint(5, 9)
+        stone3 = [random.randint(5, 9), random.randint(5, 9)]
         if stone3 != stone1 and stone3 != stone2:
             position_valid = True
 
