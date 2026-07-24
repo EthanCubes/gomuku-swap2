@@ -49,8 +49,5 @@ while g.running:
             pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are white)")
         s.gameloop()
 
-    try:
-        pygame.display.flip()
-    except:
-        break
+    pygame.display.flip()
 pygame.quit()
