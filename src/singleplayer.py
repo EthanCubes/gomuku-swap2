@@ -1,29 +1,29 @@
 from win import *
-import globalData as g
+import globalData as gD
 import board as b
 from random import randint
 import bot
 
 def setup():
-    g.starter = randint(0, 1) # 0 is bot, 1 is human
-    if g.starter == 0:
-        g.botColor = 1
-        g.playerColor = -1
+    gD.starter = randint(0, 1) # 0 is bot, 1 is human
+    if gD.starter == 0:
+        gD.botColor = 1
+        gD.playerColor = -1
     else:
-        g.botColor = -1
-        g.playerColor = 1
+        gD.botColor = -1
+        gD.playerColor = 1
 
-def gameloop():
-    if g.currentPlayer == 1:
-        if g.starter == 0:
+def game_loop():
+    if gD.currentPlayer == 1:
+        if gD.starter == 0:
             bot.bot_place_stone()
         else:
             b.user_place_stone()
     else:
-        if g.starter == 0:
+        if gD.starter == 0:
             b.user_place_stone()
         else:
             bot.bot_place_stone()
     b.render()
     calcWin()
-    g.clock.tick(30)
+    gD.clock.tick(30)
