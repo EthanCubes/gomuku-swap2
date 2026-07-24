@@ -5,6 +5,7 @@ import singleplayer as s
 
 import random
 
+from global_data import background_music_on
 from main_menu import main_menu_loop
 
 pygame.init()
@@ -18,7 +19,7 @@ g.running = True
 g.mode = 0
 
 while g.running:
-    if not pygame.mixer.music.get_busy():
+    if g.background_music_on and not pygame.mixer.music.get_busy():
         pygame.mixer.music.set_volume(0.25)
         pygame.mixer.music.unload()
         number = random.randint(1,3)

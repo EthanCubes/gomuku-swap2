@@ -22,6 +22,8 @@ botColor = None
 playerColor = None
 currentPlayer = None
 
+background_music_on = True
+
 winLine = [None, None]
 
 defaultBoardPositions = [
