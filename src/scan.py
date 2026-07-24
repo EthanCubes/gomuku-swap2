@@ -1,5 +1,5 @@
 import random
-import global_data as gD
+import global_data as g
 
 def scan_board(x, y, pattern): # now this is the hard part.
     reverse = []
@@ -15,7 +15,7 @@ def scan_board(x, y, pattern): # now this is the hard part.
         status_list = []
         for item in dir_scan_list:
             if not (item[0] < 0 or item[0] > 14 or item[1] < 0 or item[1] > 14):
-                status_list.append(gD.boardPositions[item[1]][item[0]])
+                status_list.append(g.boardPositions[item[1]][item[0]])
         scan_list.append(status_list)
     # Compares the list to the given pattern
     for item in scan_list:
@@ -59,11 +59,11 @@ def connect2():
         dlist = [(0,1),(0,-1),(1,0),(0,1),(1,1),(1,-1),(-1,1),(-1,-1)]
         x = random.randint(0,14)
         y = random.randint(0,14)
-        if gD.boardPositions[y][x] == gD.botColor:
+        if g.boardPositions[y][x] == g.botColor:
             y += dlist[direction][1]
             x += dlist[direction][0]
             if x < 0 or x > 14 or y < 0 or y > 14:
                 continue
-            if gD.boardPositions[y][x] == 0:
+            if g.boardPositions[y][x] == 0:
                 return x, y
     return None

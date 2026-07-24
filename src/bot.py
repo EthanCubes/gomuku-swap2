@@ -1,4 +1,4 @@
-import global_data as gD
+import global_data as g
 from random import randint
 import board as b
 import scan as sc
@@ -10,7 +10,7 @@ def place_randomly():
     while not valid:
         pos1 = randint(0, 14)
         pos2 = randint(0, 14)
-        if gD.boardPositions[pos2][pos1] == 0:
+        if g.boardPositions[pos2][pos1] == 0:
             valid = True
     return pos1, pos2
 
@@ -33,65 +33,65 @@ def analyze():
     """
 
     # Get 5
-    scanned = [sc.generate_scan([0, 1, 1, 1, 1, 0], gD.botColor), sc.generate_scan([0, 1, 1, 1, 1, -1], gD.botColor)]
+    scanned = [sc.generate_scan([0, 1, 1, 1, 1, 0], g.botColor), sc.generate_scan([0, 1, 1, 1, 1, -1], g.botColor)]
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Block closed 4
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 1, -1], gD.playerColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, 1, -1], g.playerColor))
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Get closed/open 4
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, -1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, -1], gD.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, -1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, -1], g.botColor))
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Block open 3
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, 0], gD.playerColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, -1], gD.playerColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, 0], g.playerColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, 0, -1], g.playerColor))
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Get Open 3
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, -1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, -1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, -1], gD.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, 0, -1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, 1, -1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 0, -1, -1], g.botColor))
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Block closed 3
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 0], gD.playerColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 1], gD.playerColor))
-    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, -1], gD.playerColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 0], g.playerColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, 1], g.playerColor))
+    scanned.append(sc.generate_scan([0, 1, 1, 1, -1, -1], g.playerColor))
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
     # Get closed 3
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, -1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, -1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, 0], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, 1], gD.botColor))
-    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, -1], gD.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, 0, -1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, 1, -1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, 0], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, 1], g.botColor))
+    scanned.append(sc.generate_scan([0, 1, 1, -1, -1, -1], g.botColor))
     for item in scanned:
         if item is not None:
             return item[1][0], item[1][1]
@@ -107,4 +107,4 @@ def analyze():
 
 def bot_place_stone():
     pos1, pos2 = analyze()
-    b.place_stone(pos1, pos2, gD.currentPlayer)
+    b.place_stone(pos1, pos2, g.currentPlayer)
