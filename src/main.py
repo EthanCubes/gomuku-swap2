@@ -1,6 +1,6 @@
 import pygame
-import globalData as g
-import offlineMultiplayer as m
+import globalData as gD
+import offlineMultiplayer as oM
 import singleplayer as s
 
 import random
@@ -8,16 +8,16 @@ import random
 from mainMenu import mainMenu
 
 pygame.init()
-g.screen = pygame.display.set_mode((720, 720))
+gD.screen = pygame.display.set_mode((720, 720))
 pygame.display.set_caption("Gomuku Swap2")
-g.img = pygame.image.load("assets/gomuku-swap2icon.bmp")
-pygame.display.set_icon(g.img) 
-g.clock = pygame.time.Clock()
-g.running = True 
+gD.img = pygame.image.load("assets/gomuku-swap2icon.bmp")
+pygame.display.set_icon(gD.img)
+gD.clock = pygame.time.Clock()
+gD.running = True
 
-g.mode = 0
+gD.mode = 0
 
-while g.running:
+while gD.running:
     if not pygame.mixer.music.get_busy():
         pygame.mixer.music.set_volume(0.25)
         pygame.mixer.music.unload()
@@ -31,19 +31,19 @@ while g.running:
         pygame.mixer.music.play()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            g.running = False
+            gD.running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                g.mode = 0
-                g.resetBoard()
-    if g.mode == 0:
+                gD.mode = 0
+                gD.resetBoard()
+    if gD.mode == 0:
         pygame.display.set_caption("Gomuku Swap2")
         mainMenu()
-    elif g.mode == 1: # Multiplayer
+    elif gD.mode == 1: # Multiplayer
         pygame.display.set_caption("Gomuku Swap2: Local Multiplayer game")
-        m.gameloop()
-    elif g.mode == 2: # Singleplayer
-        if g.starter == 0:
+        oM.gameloop()
+    elif gD.mode == 2: # Singleplayer
+        if gD.starter == 0:
             pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are black)")
         else:
             pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are white)")
