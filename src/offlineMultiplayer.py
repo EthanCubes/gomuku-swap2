@@ -5,7 +5,7 @@ from time import sleep
 import board as b
 
 def gameloop():
-    b.userPlaceStone()
+    b.user_place_stone()
     b.render()
     calcWin()
     g.clock.tick(30)

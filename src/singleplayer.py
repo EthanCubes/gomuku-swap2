@@ -20,10 +20,10 @@ def gameloop():
         if g.starter == 0:
             bot.botPlaceStone()
         else:
-            b.userPlaceStone()
+            b.user_place_stone()
     else:
         if g.starter == 0:
-            b.userPlaceStone()
+            b.user_place_stone()
         else:
             bot.botPlaceStone()
     b.render()

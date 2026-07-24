@@ -106,4 +106,4 @@ def analyze():
 
 def botPlaceStone():
     pos1, pos2 = analyze()
-    b.placeStone(pos1, pos2, g.currentPlayer)
+    b.place_stone(pos1, pos2, g.currentPlayer)

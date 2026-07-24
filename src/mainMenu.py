@@ -22,7 +22,7 @@ def mainMenu():
         g.currentPlayer = 1
         s.setup()
         g.mode = 2
-        b.generateStartPos()
+        b.generate_start_pos()
         sleep(0.5)
 
     # "Multiplayer" button
@@ -30,7 +30,7 @@ def mainMenu():
     buttonClicked = g.buttonClicked((210, 370), (300, 100))
     if buttonClicked:
         pygame.mixer.music.stop()
-        b.generateStartPos()
+        b.generate_start_pos()
         g.currentPlayer = 1
         g.mode = 1
         sleep(0.5)
