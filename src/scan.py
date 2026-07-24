@@ -46,7 +46,7 @@ def generateScan(pattern, color): # pattern has to be 6 characters.
                     if color == 1:
                         return whitelist if whitelist else None
                     elif color == -1:
-                        return blacklist if whitelist else None
+                        return blacklist if blacklist else None
         else:
             return posList
     return None
