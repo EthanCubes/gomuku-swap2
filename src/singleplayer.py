@@ -18,14 +18,14 @@ def setup():
 def gameloop():
     if g.currentPlayer == 1:
         if g.starter == 0:
-            bot.botPlaceStone()
+            bot.bot_place_stone()
         else:
             b.user_place_stone()
     else:
         if g.starter == 0:
             b.user_place_stone()
         else:
-            bot.botPlaceStone()
+            bot.bot_place_stone()
     b.render()
     calcWin()
     g.clock.tick(30)
