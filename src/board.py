@@ -1,5 +1,5 @@
 import pygame
-import globalData as gD
+import global_data as gD
 import random
 
 def place_stone(x_pos, y_pos, player):

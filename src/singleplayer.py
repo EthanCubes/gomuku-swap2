@@ -1,5 +1,5 @@
 from win import *
-import globalData as gD
+import global_data as gD
 import board as b
 from random import randint
 import bot

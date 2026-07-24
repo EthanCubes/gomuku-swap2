@@ -1,6 +1,6 @@
 import pygame
 from time import sleep
-import globalData as gD
+import global_data as gD
 import board as b
 
 def scan_position(base_pos, pos1, pos2, pos3, pos4, board_position):

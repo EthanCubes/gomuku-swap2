@@ -1,4 +1,4 @@
-import globalData as gD
+import global_data as gD
 from random import randint
 import board as b
 import scan as sc

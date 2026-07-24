@@ -1,11 +1,11 @@
 import pygame
-import globalData as gD
-import offlineMultiplayer as oM
+import global_data as gD
+import offline_multiplayer as oM
 import singleplayer as s
 
 import random
 
-from mainMenu import main_menu_loop
+from main_menu import main_menu_loop
 
 pygame.init()
 gD.screen = pygame.display.set_mode((720, 720))

@@ -1,5 +1,5 @@
 import random
-import globalData as gD
+import global_data as gD
 
 def scan_board(x, y, pattern): # now this is the hard part.
     reverse = []
