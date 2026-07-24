@@ -34,13 +34,13 @@ def analyze():
     scanned.append(sc.generateScan([0,1,1,1,1,0], gD.botColor))
     scanned.append(sc.generateScan([0,1,1,1,1,-1], gD.botColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Block closed 4
     scanned.append(sc.generateScan([0,1,1,1,1,-1], gD.playerColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Get closed/open 4
@@ -50,14 +50,14 @@ def analyze():
     scanned.append(sc.generateScan([0,1,1,1,-1,1], gD.botColor))
     scanned.append(sc.generateScan([0,1,1,1,-1,-1], gD.botColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Block open 3
     scanned.append(sc.generateScan([0,1,1,1,0,0], gD.playerColor))
     scanned.append(sc.generateScan([0,1,1,1,0,-1], gD.playerColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Get Open 3
@@ -71,7 +71,7 @@ def analyze():
     scanned.append(sc.generateScan([0,1,1,0,-1,1], gD.botColor))
     scanned.append(sc.generateScan([0,1,1,0,-1,-1], gD.botColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Block closed 3
@@ -79,7 +79,7 @@ def analyze():
     scanned.append(sc.generateScan([0,1,1,1,-1,1], gD.playerColor))
     scanned.append(sc.generateScan([0,1,1,1,-1,-1], gD.playerColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     # Get closed 3
     scanned.append(sc.generateScan([0,1,1,-1,0,0], gD.botColor))
@@ -92,13 +92,13 @@ def analyze():
     scanned.append(sc.generateScan([0,1,1,-1,-1,1], gD.botColor))
     scanned.append(sc.generateScan([0,1,1,-1,-1,-1], gD.botColor))
     for item in scanned:
-        if item:
+        if item is not None:
             return item[1][0], item[1][1]
     scanned.clear()
     # Get 2 in a row
     scanned.append(sc.connect2())
     for item in scanned:
-        if item:
+        if item is not None:
             return item[0], item[1]
     scanned.clear()
     # Place randomly
