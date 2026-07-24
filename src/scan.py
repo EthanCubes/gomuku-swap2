@@ -43,10 +43,10 @@ def generate_scan(pattern, color): # pattern has to be 6 characters.
                     whitelist.append(item)
                 else:
                     blacklist.append(item)
-                    if color == 1:
-                        return whitelist if whitelist else None
-                    elif color == -1:
-                        return blacklist if blacklist else None
+            if color == 1:
+                return whitelist if whitelist else None
+            elif color == -1:
+                return blacklist if blacklist else None
         else:
             return pos_list
     return None
