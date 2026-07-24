@@ -41,13 +41,13 @@ while gD.running:
         main_menu_loop()
     elif gD.mode == 1: # Multiplayer
         pygame.display.set_caption("Gomuku Swap2: Local Multiplayer game")
-        oM.gameloop()
+        oM.game_loop()
     elif gD.mode == 2: # Singleplayer
         if gD.starter == 0:
             pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are black)")
         else:
             pygame.display.set_caption("Gomuku Swap2: Game vs Bot (You are white)")
-        s.gameloop()
+        s.game_loop()
 
     pygame.display.flip()
 pygame.quit()
