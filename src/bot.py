@@ -13,7 +13,7 @@ def placeRandomly():
     return pos1, pos2
 
 def analyze():
-    '''
+    """
     *** Roadmap ***
     Scan for immediate danger/win
     Place to create threats/thwart ones
@@ -28,7 +28,7 @@ def analyze():
     7. Get closed 3
     8. Get 2 in a row
     9. Place randomly
-    '''
+    """
     scanned = []
     # Get 5
     scanned.append(sc.generateScan([0,1,1,1,1,0], g.botColor))
