@@ -1,12 +1,12 @@
 # Gomuku (Swap2)
-A east asian board game simular to tic-tac-toe, except it's played on a 15x15 board and you need to get 5 in a row to win.
+An East Asian board game simular to tic-tac-toe, except it's played on a 15x15 board, and you need to get 5 in a row to win.
 ![Image of a Go board](screenshots/Screenshot%202026-07-16%20at%2021.20.01.png)
 
 [Play it here]()
 ## Quickstart
 Download the game files from Itch.io according to your operating system, and run them.
 
-If you're on Linux, I'm so sorry I can't give you a dedicated version for you, but just run the windows version with Wine. I'd assume you know how to use Wine already, but here's how to download wine just in case:
+If you're on Linux, I'm so sorry I can't give you a dedicated version for you, but just run the Windows version with Wine. I'd assume you know how to use Wine already, but here's how to download wine just in case:
 In the terminal:
 - Arch-based systems: ```sudo pacman -S wine```
 - Everything else, probably: ```sudo apt install wine```
@@ -16,12 +16,12 @@ Then just like doubleclick the .exe file or run ```wine /path/to/the/exe/gomuku-
 - A main menu with 3 clickable buttons that each do their own thing.
 - A 15x15 Go board 
 that Gomuku is played on.
-- A local multiplayer mode that allows for you to play against your IRL friends (or yourself if you have no friends)
-- A bot that is somewhat intelligent and actively responds to your threats and creates it's own threats.
+- A local multiplayer mode that allows for you to play against your (IRL) friends (or yourself if you have no friends)
+- A bot that is somewhat intelligent and actively responds to your threats and creates its own threats.
 - Background music that is somewhat annoying.
 
 ## How to run code locally
-Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside of the newer Python versions, but on 3.14.6 specifically the music is broken). You will probably have to install them inside of a venv since this program uses an older version of Python as aforementioned.
+Requires Python 3.12.13 and Pygame 2.6.1 (Note that the project will still technically work inside the newer Python versions, but on 3.14.6 specifically the music is broken). You will probably have to install them inside a venv since this program uses an older version of Python as aforementioned.
 Clone the project from GitHub, then run main.py.
 
 ## How it works
@@ -31,9 +31,9 @@ To figure out when the game is over, an algorithm scans the board every frame to
 
 ### For the bot, well.........
 
-There are two reasons why the bot may make a move. 1 is that the bot needs to defend, and 2 is that the bot needs to attack. Mostly defense is prioritied above offence, except when the offence creates a threat that outweighs the current threat needing to be defended.
+There are two reasons why the bot may make a move. 1 is that the bot needs to defend, and 2 is that the bot needs to attack. Mostly defense is prioritied above offense, except when the offense creates a threat that outweighs the current threat needing to be defended.
 
-To find places to attack or defend, a function scans in all 8 directions for all 225 possible spots (1800 iterations in total) and compares the iterations against a specified pattern, for example [0,1,1,1,0] is an open 3 and [0,1,1,1,1,0] is impending doom (open four). If it finds a position, it will add it to a list of positions, which is returned to the analyze function to be analyzed. The analyze function eventually returns a set of coordinates that the bot will place a stone at, in around the same way that a user might place a stone.
+To find places to attack or defend, a function scans in all 8 directions for all 225 possible spots (1800 iterations in total) and compares the iterations against a specified pattern, for example [0,1,1,1,0] is an open 3 and [0,1,1,1,1,0] is impending doom (open four). If it finds a position, it will add it to a list of positions, which is returned to the "analyze" function to be analyzed. The "analyze" function eventually returns a set of coordinates that the bot will place a stone at, in around the same way that a user might place a stone.
 
 ## Credits
 - [Pygame official documentation](https://www.pygame.org/docs/) was helpful in getting the project started.
