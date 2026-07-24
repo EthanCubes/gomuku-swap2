@@ -35,7 +35,7 @@ while gD.running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 gD.mode = 0
-                gD.resetBoard()
+                gD.reset_board()
     if gD.mode == 0:
         pygame.display.set_caption("Gomuku Swap2")
         mainMenu()

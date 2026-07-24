@@ -56,18 +56,20 @@ boardPositions = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 ]
 
-def buttonClicked(start, endRel):
+def button_clicked(start, relative_end):
     end = [0, 0]
-    end[0] = start[0] + endRel[0]
-    end[1] = start[1] + endRel[1]
-    mousePos = pygame.mouse.get_pos()
-    if pygame.mouse.get_pressed(3)[0] == True:
-        if mousePos[0] > start[0] and mousePos[0] < end[0] and mousePos[1] > start[1] and mousePos[1] < end[1]:
+    end[0] = start[0] + relative_end[0]
+    end[1] = start[1] + relative_end[1]
+    mouse_pos = pygame.mouse.get_pos()
+    if pygame.mouse.get_pressed(3)[0]:
+        if start[0] < mouse_pos[0] < end[0] and start[1] < mouse_pos[1] < end[1]:
             return True
         else:
             return False
+    return None
 
-def resetBoard():
+
+def reset_board():
     global boardPositions, defaultBoardPositions
     pygame.mixer.music.stop()
     boardPositions = [row[:] for row in defaultBoardPositions]

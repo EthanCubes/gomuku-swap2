@@ -162,7 +162,7 @@ def calcWin():
             pygame.display.set_caption("Gomuku Swap2: Black Victory!")
         sleep(1)
         g.mode = 0
-        g.resetBoard()
+        g.reset_board()
     placedStones = 0
     for y in range(15):
         for x in range(15):
@@ -174,4 +174,4 @@ def calcWin():
         pygame.display.set_caption("Gomuku Swap2: Draw!")
         sleep(1)
         g.mode = 0
-        g.resetBoard()
+        g.reset_board()
