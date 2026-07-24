@@ -1,7 +1,5 @@
-import pygame
 from win import *
 import globalData as g
-from time import sleep
 import board as b
 from random import randint
 import bot
