@@ -25,5 +25,5 @@ def game_loop():
         else:
             bot.bot_place_stone()
     b.render()
-    calcWin()
+    calculate_win()
     gD.clock.tick(30)

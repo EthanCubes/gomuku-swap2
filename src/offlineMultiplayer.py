@@ -5,5 +5,5 @@ import board as b
 def game_loop():
     b.user_place_stone()
     b.render()
-    calcWin()
+    calculate_win()
     gD.clock.tick(30)
